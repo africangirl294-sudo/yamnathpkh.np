@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yamnath Pokhrel - Personal Website</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; }
+    
+    /* Welcome Dashboard */
+    #welcome { display:flex; justify-content:center; align-items:center; height:100vh; background:#0077cc; color:#fff; flex-direction:column; text-align:center; }
+    #welcome h1 { font-size:3rem; margin-bottom:20px; }
+    #welcome p { font-size:1.2rem; margin-bottom:30px; }
+    #welcome button { padding:15px 30px; font-size:1.2rem; border:none; border-radius:8px; background:#fff; color:#0077cc; cursor:pointer; font-weight:bold; }
+    #welcome button:hover { background:#e0e0e0; }
+
+    /* Tabs Navigation */
+    nav { display:none; background:#0077cc; color:#fff; padding:15px 20px; justify-content:center; gap:30px; }
+    nav button { background:none; border:none; color:#fff; font-size:1rem; cursor:pointer; font-weight:bold; }
+    nav button:hover { text-decoration:underline; }
+
+    /* Sections */
+    .section { display:none; padding:40px 20px; max-width:800px; margin:20px auto; background:#fff; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+    .section.active { display:block; }
+
+    h2 { margin-bottom:20px; color:#0077cc; }
+    p { font-size:1.1rem; margin-bottom:10px; }
+
+    /* Contact Form */
+    form { display:flex; flex-direction:column; gap:15px; }
+    input, textarea, select { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
+    button.submit { background:#0077cc; color:#fff; border:none; padding:12px; border-radius:5px; cursor:pointer; font-size:1rem; }
+    button.submit:hover { background:#005fa3; }
+
+    /* Responsive */
+    @media(max-width:768px){ nav { flex-direction:column; gap:15px; } }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Dashboard -->
+  <div id="welcome">
+  
+
+  
+    <h1>Welcome to My Personal Website</h1>
+    <p>Hello! I am <strong>Yamnath Pokhrel</strong>. Click below to enter my dashboard.</p>
+    <button onclick="enterDashboard()">Enter</button>
+  </div>
+
+    
+
+  <!-- Navigation Tabs -->
+  <nav id="navbar">
+    <button onclick="showSection('info')">Information</button>
+    <button onclick="showSection('dream')">Dream</button>
+    <button onclick="showSection('school')">School</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+
+
+    
+
+  <!-- Information Section -->
+  <div id="info" class="section active">
+    <h2>Information</h2>
+    <p><strong>Full Name:</strong> Yamnath Pokhrel</p>
+      <p> Read on class-7</p>
+      <p> Live in Gatthaghar-Bhaktapur-9</p>
+      <p> On family 4 memeber</p>
+    <p><strong>Profession:</strong> Web Developer / Tech Enthusiast</p>
+    
+    <p><strong>Bio:</strong>  I am learnig sanskrit and learn small path of coding like Html css</p>
+    
+    <p><strong>Hobbies:</strong> Coding, Reading, video-Gaming, Exploration</p>
+  </div>
+
+
+    
+
+  <!-- Dream Section -->
+  <div id="dream" class="section">
+    <h2>Dreams & Goals</h2>
+    
+    <p>My dream is to become a full-stack developer and create innovative applications that solve real-life problems.</p>
+    <p>My dream is to become a skilled programmer while continuing my deep study of Karmakanda and Ved Byakram. I want to combine modern technology with the ancient knowledge of the Vedas, creating a balance between tradition and innovation. Programming fascinates me because it allows me to solve problems, build applications, and create tools that can help society. I aim to master coding languages, algorithms, and software development, so that I can contribute to the digital world in a meaningful way.
+
+At the same time, I want to immerse myself in the study of Vedic rituals (Karmakanda) and Ved Byakram, learning the precise methods of performing sacred rites, understanding the meaning of mantras, and exploring spiritual knowledge. I believe that learning the Vedas will give me wisdom, discipline, and clarity of thought, which will complement my programming skills.
+
+By combining technology and spirituality, I hope to create a unique path that honors my culture while also embracing modern advancements. My dream is not only to excel personally but also to inspire others to value both ancient knowledge and modern skills, bridging the gap between the past and the future.</p>
+  </div>
+
+    
+
+  <!-- School Section -->
+  <div id="school" class="section">
+    <h2>Education</h2>
+    <h3> Nepal ved vidyashram sanskrit secondry school </h3>
+    
+    <p><strong>School:</strong> primary school, Nepal</p>
+    
+    <p><strong>Grade:</strong> 7 / Sanskrit </p>
+    <p><strong>Achievements:</strong>Nepal Ved Vidyashram Sanskrit Secondary School is a historic and respected institution where the primary focus is on Sanskrit studies. English, Nepali, and Mathematics are taught, but only to a limited extent. The school emphasizes developing students’ knowledge in Vedic literature, scriptures, Sanskrit grammar, and cultural heritage. There is no computer education, but students gain strong memory, analytical skills, and language proficiency. The environment is peaceful, disciplined, and scholarly, encouraging daily study of scriptures and traditions. Students here achieve deep understanding of Sanskrit and Vedic texts, making this school a prominent center for Sanskrit education in Nepal.</p>
+  </div>
+
+    
+
+  <!-- Contact Section -->
+  <div id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="fname" placeholder="First Name" required>
+      <input type="text" id="lname" placeholder="Last Name" required>
+      <input type="tel" id="phone" placeholder="+977-XXXXXXXXX" required>
+      <input type="email" id="email" placeholder="example23@gmail.com" required>
+      <textarea id="message" maxlength="100" placeholder="Your feedback (max 100 letters)"></textarea>
+      <select id="type">
+        <option value="feedback">Feedback</option>
+        <option value="complaint">Complaint</option>
+        <option value="suggestion">Suggestion</option>
+      </select>
+      <button type="submit" class="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    // Enter Dashboard
+    function enterDashboard() {
+      document.getElementById('welcome').style.display='none';
+      document.getElementById('navbar').style.display='flex';
+      showSection('info');
+    }
+
+    // Show tab section
+    function showSection(sectionId) {
+      const sections=document.querySelectorAll('.section');
+      sections.forEach(sec=>sec.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    // Contact form email
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const fname=document.getElementById('fname').value;
+      const lname=document.getElementById('lname').value;
+      const phone=document.getElementById('phone').value;
+      const email=document.getElementById('email').value;
+      const message=document.getElementById('message').value;
+      const type=document.getElementById('type').value;
+
+      const subject=`New ${type} from ${fname} ${lname}`;
+      const body=`Name: ${fname} ${lname}%0D%0APhone: ${phone}%0D%0AEmail: ${email}%0D%0AType: ${type}%0D%0AMessage: ${message}`;
+
+      window.location.href=`mailto:yourmail@example.com?subject=${subject}&body=${body}`;
+      alert("Your message is ready to send in your email app.");
+    });
+  </script>
+
+</body>
+</html>
